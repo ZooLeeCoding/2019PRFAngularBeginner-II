@@ -21,7 +21,7 @@ export class SignupComponent implements OnInit {
 
   buttonClick() {
     console.log(this.userService.greetUser());
-    this.router.navigate(['/main', 
+    this.router.navigate(['/main/2', 
       {name: this.userService.greetUser()}]);
   }
 
