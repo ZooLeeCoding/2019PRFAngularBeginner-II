@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../user.service'; 
+import { UserService } from '../user.service';
+import { Router } from '@angular/router'; 
 
 @Component({
   selector: 'app-signup',
@@ -8,7 +9,8 @@ import { UserService } from '../user.service';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService,
+    private router: Router) { }
 
   ngOnInit() {
   }
@@ -19,6 +21,8 @@ export class SignupComponent implements OnInit {
 
   buttonClick() {
     console.log(this.userService.greetUser());
+    this.router.navigate(['/main', 
+      {name: this.userService.greetUser()}]);
   }
 
 }
