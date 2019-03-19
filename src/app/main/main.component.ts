@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-main',
@@ -8,12 +9,23 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MainComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
+  answer = '';
+
+  constructor(private route: ActivatedRoute, private userService: UserService) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       console.log(params);
       console.log(params['name']);
+    });
+  }
+
+  clickMe() {
+    this.userService.connect().subscribe(data => {
+      console.log(data);
+      this.answer = data.origin;
+    }, error=> {
+      console.log("error", error);
     });
   }
 
