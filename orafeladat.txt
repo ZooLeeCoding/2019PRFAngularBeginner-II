@@ -1,0 +1,21 @@
+1. Az összes eddigi komponenst egészítsd
+ki a megfelelő gombokkal,
+hogy bármelyikről bármelyikre lehessen
+navigálni (a main-ra is megfelelő id-del)
+
+2. Készíts egy új komponenst, Increase néven (/increase path-tal)
+ amely egy
+:num paramétert vár, és amely csak a main
+-ről érhető el
+
+3. A main-en legyen egy num típusú input
+mező (  [(ngModel)] ) amely egy változóra
+van kötve és egy extra gomb INC felirattal
+
+4. Ha a felhasználó erre a gombra kattint, navigáljon
+át az új komponensre
+
+5. Ha a :num komponens nem 3-nál nagyobb
+ numerikus érték, az 
+Increase komponens dobja vissza a usert a LoginComponentre, ha 
+az akkor jelenítse meg egy {{}} template-ben eggyel növelve az értékét
